@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    background:url(images/quiz.png) center ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+.quizContainer{
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 2px rgba(100,100,100,0.1);
+    margin-bottom: 5rem;
+    margin-top: 1rem;
+    width: 500px;
+}
+.quizHeader{
+    padding: 4rem;
+   
+}
+h2{
+    padding: 0 1rem;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+ul li{
+    font-size: 1rem;
+    margin: 1rem;
+}
+ul li label{
+    cursor: pointer;
+}
+
+.submit{
+    border: none;
+    background-color: #a8c82f;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: block;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+#submit:focus::after{
+    content: ", Son Kararım 👍";
+    outline: none;
+}
+#submit:focus{
+    background-color: #f87da9;
+    outline: none;
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked){
+    display: none;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label{
+    position: relative;
+    padding-left: 2rem;
+    cursor: pointer;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    border: 1px solid #ddd;
+    width: 1.1rem;
+    height: 1.1rem;
+    border-radius: 100%;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after{
+    content: "";
+    background-color: #f87da9;
+    width: 0.75rem;
+    height: 0.75rem;
+    position: absolute;
+    top:4px;
+    left: 4px;
+    border-radius: 100%;
+    transition: all 0.2s ease;
+}
+[type="radio"]:checked + label:after{
+opacity: 1;
+
+}
+[type="radio"]:not(:checked) + label:after{
+opacity: 0;
+}
